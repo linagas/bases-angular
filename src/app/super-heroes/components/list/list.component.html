@@ -1,0 +1,22 @@
+<section class="container-fluid my-5">
+  <h2 class="text-center">Listado de Heroes</h2>
+  <ul *ngIf="heroes.length > 0; else noHeroes" class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let hero of heroes">
+    {{hero.name}}
+    <button type="button" class="btn btn-outline-primary"><i class="bi bi-eye"></i></button>
+    <button type="button" class="btn btn-outline-secondary"><i class="bi bi-pencil"></i></button>
+    <button (click)="removeHero(hero.id)" type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+  </li>
+  </ul>
+  <button *ngIf="heroes.length > 0" (click)="removeLastHero()" type="button" class="btn btn-outline-danger"> Borrar ultimo Heroe<i class="bi bi-trash"></i></button>
+  <div *ngIf="heroesDeleted" class="alert alert-danger" role="alert">
+    Se ha borrado el heroe: {{heroesDeleted.name}}
+  </div>
+  <ng-template #noHeroes>
+    <div class="alert alert-warning" role="alert">
+      No hay heroes para mostrar
+    </div>
+  </ng-template>
+</section>

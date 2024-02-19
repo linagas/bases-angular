@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <h1>{{name}} </h1>
+  <div class="card" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">Basic info:</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <span class="badge badge-primary">Name:</span>
+          <span class="badge badge-secondary">{{name}}</span>
+        </li>
+        <li class="list-group-item">
+          <span class="badge badge-primary">Edad:</span>
+          <span class="badge badge-secondary">{{age}}</span>
+        </li>
+        <li class="list-group-item">
+          <span class="badge badge-primary">Metodo:</span>
+          <span class="badge badge-primary">{{getHeroDescription()}}</span>
+        </li>
+        <li class="list-group-item">
+          <span class="badge badge-primary">Capitalizado:</span>
+          <span class="badge badge-secondary"> {{capitalizedName}}</span>
+        </li>
+        <li class="list-group-item">etc ...</li>
+      </ul>
+      <button
+        *ngIf="name!=='wonder woman'"
+        type="button"
+        class="btn btn-outline-primary my-2 mx-2"
+        (click)="changeName('wonder woman')">Cambiar Nombre</button>
+      <button
+      *ngIf="age!==5000"
+      type="button"
+      class="btn btn-outline-secondary my-2 mx-2"
+      (click)="changeAge(5000)">Cambiar Edad</button>
+
+      <button
+      class="btn btn-outline-secondary my-2 mx-2"
+      (click)="reset()">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+
+    </div>
+  </div>
+</div>
